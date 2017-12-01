@@ -1,0 +1,30 @@
+int main() 
+{
+	printf("ingrese el tamaño de la matriz\n");
+	int m;
+	scanf ( "%d",& m );
+	int matriz [m][m];
+	int matriz2 [m][m];
+	printf("\nmatriz obtenida\n");
+	for (int i=0; i<m; i++)
+	{
+		for (int j=0; j<m; j++)
+		{
+			matriz[i][j]=rand() % 10;
+			printf("[%d]",matriz[i][j]);
+		}
+		printf("\n");
+	}
+	printf("\nmatriz Transpuesta\n");
+	for (int i=0; i<m; i++)
+	{
+		for (int j=0; j<m; j++)
+		{
+			matriz2[i][j]=matriz[j][i];
+			printf("[%d]",matriz2[i][j]);
+		}
+		printf("\n");
+	}
+	system("pause");
+	return 0;
+}

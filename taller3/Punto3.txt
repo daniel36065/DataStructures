@@ -1,0 +1,105 @@
+#include <iostream>
+#include <cstdlib>
+#include <conio.h>
+#include <string.h>
+using namespace std;
+int main() 
+{
+	printf("ingrese el tamaño de la matriz\n");
+	int m;
+	scanf ( "%d",& m );
+	int matriz [m][m];
+	int contp=0;
+	int contimp=0;
+	int contn=0;
+	int contpos=0;
+	printf("\nmatriz obtenida\n");
+	for (int i=0; i<m; i++)
+	{
+		for (int j=0; j<m; j++)
+		{
+			matriz[i][j]= (rand()%40)-9;
+			printf("[%d]",matriz[i][j]);
+		}
+		printf("\n");
+	}
+	for (int i=0; i<m; i++)
+	{
+		for (int j=0; j<m; j++)
+		{
+			if(matriz[i][j] % 2==0)
+			{
+				contp++;
+			}
+			else
+			{
+				contimp++;
+			}
+			if(matriz[i][j] >0)
+			{
+				contpos++;
+			}
+			else
+			{
+				contn++;
+			}
+		}
+	}
+	int pares [contp];
+	int impares [contimp];
+	int pos [contpos];
+	int neg [contn];
+	int a=0,b=0,c=0,d=0;
+	for (int i=0; i<m; i++)
+	{
+		for (int j=0; j<m; j++)
+		{
+			if(matriz[i][j] % 2==0)
+			{
+				pares[a]=(matriz[i][j]);
+				a++;
+			}
+			else
+			{
+				impares[b]=matriz[i][j];
+				b++;
+			}
+			if(matriz[i][j] > 0 and matriz[i][j] != 0)
+			{
+				pos[c]=matriz[i][j];
+				c++;
+			}
+			if(matriz[i][j] < 0 and matriz[i][j] != 0)
+			{
+				neg[d]=matriz[i][j];
+				d++;
+			}
+		}
+	}
+	printf("\n\nnumeros pares[%d]",contp);
+	printf("\n");
+	for (int i=0; i<contp; i++)
+	{
+		printf("[%d]",pares[i]);
+	}
+	printf("\n\nnumeros impares[%d]",contimp);
+	printf("\n");
+	for (int i=0; i<contimp; i++)
+	{
+		printf("[%d]",impares[i]);
+	}
+	printf("\n\nnumeros positivos[%d]",contpos);
+	printf("\n");
+	for (int i=0; i<contpos; i++)
+	{
+		printf("[%d]",pos[i]);
+	}
+	printf("\n\nnumeros negativos[%d]",contn);
+	printf("\n");
+	for (int i=0; i<contn; i++)
+	{
+		printf("[%d]",neg[i]);
+	}
+	getch();
+	return 0;
+}
